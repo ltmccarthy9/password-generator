@@ -126,9 +126,9 @@ function generatePassword() {
 for (i=0; i<passwordLengthInt; i++){
     var mainlength = mainList.length;
     var randNum = Math.floor(Math.random() * (mainlength - 0 + 1)) + 0;
-        passWord[i] = mainList[randNum]
+    passWord[i] = mainList[randNum]
     }
-    passWordString = passWord.toString();
+    var passWordString = passWord.toString();
     return passWordString;
 }
   
