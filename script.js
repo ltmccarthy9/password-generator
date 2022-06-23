@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+
 function writePassword() {
 
     // creating arrays of each character type
@@ -41,7 +41,6 @@ function writePassword() {
         var specialYN = window.confirm("Do you want special characters in your password?")
         if (specialYN) {
         mainList = mainList.concat(specialCharacters)
-        console.log(mainList)
         yesCount = true;
         stepCount = 1;
         } else {
@@ -49,7 +48,6 @@ function writePassword() {
             stepCount = 1;
             if (lowerYN) {
                 mainList = mainList.concat(lowerCase)
-                console.log(mainList)
                 yesCount = true;
                 stepCount = 2;
             } else {
@@ -57,7 +55,6 @@ function writePassword() {
                 stepCount = 2;
                 if (upperYN) {
                     mainList = mainList.concat(upperCase)
-                    console.log(mainList)
                     yesCount = true;
                     stepCount = 3;
                 } else {
@@ -65,8 +62,8 @@ function writePassword() {
                     stepCount = 3;
                     if (numberYN) {
                         mainList = mainList.concat(numberList)
-                        console.log(mainList)
                         yesCount = true;
+                        stepCount = 4;
                     } else {
                         alert("You must choose at least one option")
                     }
@@ -82,27 +79,25 @@ function writePassword() {
         if (lowerYN){
             mainList = mainList.concat(lowerCase)
             stepCount = 2;
-            console.log(mainList)
         } else {
             stepCount = 2;
-        }
-        
+        } 
     }
+
     if (stepCount === 2) {
         var upperYN = window.confirm("Do you want uppercase letters in your password?")
         if (upperYN) {
             mainList = mainList.concat(upperCase)
             stepCount = 3;
-            console.log(mainList)
         } else {
             stepCount = 3;
         }
     }
+    
     if (stepCount === 3) {
         var numberYN = window.confirm("Do you want numbers in your password?")
         if (numberYN) {
             mainList = mainList.concat(numberList)
-            console.log(mainList)
         }
     }
 
