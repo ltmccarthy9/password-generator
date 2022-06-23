@@ -19,4 +19,6 @@ these prompts are completed a password is generated and displayed on the screen.
 
 ## Application and deployed link
 
+https://ltmccarthy9.github.io/password-generator/
+
 

@@ -22,9 +22,9 @@ function writePassword() {
     var passwordLength = window.prompt("How many characters long do you want your password to be?")
     var passwordLengthInt = parseInt(passwordLength)
             if (passwordLengthInt < 8) {
-                alert("Must be 8 or more characters long!")  
+                alert("Your password must be between 8 and 128 characters long!")  
             } else if (passwordLengthInt > 128) {
-                alert("Must be 128 or less characters long")
+                alert("Your password must be between 8 and 128 characters long")
             } else if (passwordLengthInt > 7 && passwordLength < 129) {
                 phase1 = false;
             } else {
