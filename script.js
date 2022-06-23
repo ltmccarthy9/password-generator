@@ -19,7 +19,7 @@ function writePassword() {
     //Must be between 8 and 128 characters long
     var phase1 = true;
     while (phase1 == true) {
-    var passwordLength = window.prompt("How many characters would you like? ")
+    var passwordLength = window.prompt("How many characters long do you want your password to be?")
     var passwordLengthInt = parseInt(passwordLength)
             if (passwordLengthInt < 8) {
                 alert("Must be 8 or more characters long!")  
@@ -40,27 +40,34 @@ function writePassword() {
     while (!yesCount) {
         var specialYN = window.confirm("Do you want special characters in your password?")
         if (specialYN) {
+        alert("Your password may include special characters.")
         mainList = mainList.concat(specialCharacters)
         yesCount = true;
         stepCount = 1;
         } else {
+            alert("Your password will not have special characters.")
             var lowerYN = window.confirm("Do you want lowercase letters in your password?")
             stepCount = 1;
             if (lowerYN) {
+                alert("Your password may include lowercase letters.")
                 mainList = mainList.concat(lowerCase)
                 yesCount = true;
                 stepCount = 2;
             } else {
+                alert("Your password will not have lowercase letters.")
                 var upperYN = window.confirm("Do you want uppercase letters in your password?")
                 stepCount = 2;
                 if (upperYN) {
+                    alert("Your password may include uppercase letters.")
                     mainList = mainList.concat(upperCase)
                     yesCount = true;
                     stepCount = 3;
                 } else {
+                    alert("Your password will not have uppercase letters.")
                     var numberYN = window.confirm("Do you want numbers in your password?")
                     stepCount = 3;
                     if (numberYN) {
+                        alert("Your password may include numbers.")
                         mainList = mainList.concat(numberList)
                         yesCount = true;
                         stepCount = 4;
@@ -77,9 +84,11 @@ function writePassword() {
     if (stepCount === 1) {
         var lowerYN = window.confirm("Do you want lowercase letters in your password?")
         if (lowerYN){
+            alert("Your password may include lowercase letters.")
             mainList = mainList.concat(lowerCase)
             stepCount = 2;
         } else {
+            alert("Your password will not have lowercase letters.")
             stepCount = 2;
         } 
     }
@@ -87,17 +96,22 @@ function writePassword() {
     if (stepCount === 2) {
         var upperYN = window.confirm("Do you want uppercase letters in your password?")
         if (upperYN) {
+            alert("Your password may include uppercase letters.")
             mainList = mainList.concat(upperCase)
             stepCount = 3;
         } else {
+            alert("Your password will not have uppercase letters.")
             stepCount = 3;
         }
     }
-    
+
     if (stepCount === 3) {
         var numberYN = window.confirm("Do you want numbers in your password?")
         if (numberYN) {
+            alert("Your password may include numbers.")
             mainList = mainList.concat(numberList)
+        } else {
+            alert("Your password will not have numbers.")
         }
     }
 
