@@ -29,9 +29,24 @@ Used for generating personal passwords.
 
 ## Code
 
-![alt text](./assets/password1.png)
-![alt text](./assets/password2.png)
+This only allows a password length of 8 to 128 and returns null if prompt is canceled.
 
+```
+    var phase1 = true;
+    while (phase1 == true) {
+        var passwordLength = window.prompt("How long (characters) do you want your password to be?")
+        var passwordLengthInt = parseInt(passwordLength)
+            if (passwordLengthInt < 8) {
+                alert("Your password must be between 8 and 128 characters long!")  
+            } else if (passwordLengthInt > 128) {
+                alert("Your password must be between 8 and 128 characters long")
+            } else if (passwordLengthInt > 7 && passwordLength < 129) {
+                phase1 = false;
+            } else {
+                return null;
+            }
+    }
+```
 
 ## License
 
@@ -56,3 +71,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+    

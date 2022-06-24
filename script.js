@@ -28,7 +28,7 @@ function writePassword() {
             } else if (passwordLengthInt > 7 && passwordLength < 129) {
                 phase1 = false;
             } else {
-                alert("You must input a password length");
+                return null;
             }
         }
     //displaying/confirming to the user how long their password will be.
@@ -78,7 +78,7 @@ function writePassword() {
             }
         }
     } 
-    // Once the while loop above breaks, you must end up at the correct question in sequence
+    // Once the while loop above breaks with a yes, you must end up at the correct question in sequence
     //ie: we don't want to select no-no-yes and then end up back at the first question
     // use stepCount to solve this.
     if (stepCount === 1) {
