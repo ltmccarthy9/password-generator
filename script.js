@@ -1,19 +1,18 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
 
 
 function writePassword() {
 
     // creating arrays of each character type
     var mainList = []
-    var specialCharacters = [' ', '!', '#','$','%','&',' ','(',')','*','+',',','-','.','/',':',
-    ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '{', '|', '}', '~', '`']
-    var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-     't', 'u', 'v', 'w', 'x', 'y', 'z']
-    var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
-    'T', 'U', 'V', 'Q', 'X', 'Y', 'Z']
-    var numberList = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    var passWord =[]
+    var specialCharacters = [' ' , '!' , '#' , '$' , '%' , '&' , ' ' , '(' , ')' , '*' , '+' , ',' , '-' , '.' , '/' , ':' ,
+    ':' , ';' , '<' , '=' , '>' , '?' , '@' , '[' , ']' , '^' , '_' , '{' , '|' , '}' , '~' , '`']
+    var lowerCase = ['a' , 'b' , 'c' , 'd' , 'e' , 'f' , 'g' , 'h' , 'i' , 'j' , 'k' , 'l' , 'm' , 'n' , 'o' , 'p' , 'q' , 'r' , 's' ,
+     't' , 'u' , 'v' , 'w' , 'x' , 'y' , 'z']
+    var upperCase = ['A' , 'B' , 'C' , 'D' , 'E' , 'F' , 'G' , 'H' , 'I' , 'J' , 'K' , 'L' , 'M' , 'N' , 'O' , 'P' , 'Q' , 'R' , 'S' ,
+    'T' , 'U' , 'V' , 'Q' , 'X' , 'Y' , 'Z']
+    var numberList = ['0' , '1' , '2' , '3' , '4' , '5' , '6' , '7' , '8' , '9']
+    var passWord = ""
 
     // asking the user how many characters they want in their password
     //Must be between 8 and 128 characters long
@@ -115,30 +114,24 @@ function writePassword() {
         }
     }
 
-var password = generatePassword();
-
-var passwordText = document.querySelector("#password"); 
-    
-passwordText.value = password;
-
-//function to generate password
-function generatePassword() {
-for (i=0; i<passwordLengthInt; i++){
-    var mainlength = mainList.length;
-    var randNum = Math.floor(Math.random() * (mainlength - 0 + 1)) + 0;
-    passWord[i] = mainList[randNum]
+    var passwordText = document.querySelector("#password"); 
+    var password = generatePassword();
+    passwordText.value = password;
+    //function to generate password
+    function generatePassword() {
+    for (i=0; i<passwordLengthInt; i++){
+        var mainlength = mainList.length;
+        var randNum = Math.floor(Math.random() * (mainlength - 0 + 1)) + 0;
+        passWord = passWord + mainList[randNum]
+        }
+        return passWord;
     }
-    var passWordString = passWord.toString();
-    return passWordString;
-}
-  
-
 }
 
 
-
-// Add event listener to generate button
+var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
+
 
 
 
